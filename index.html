@@ -58,20 +58,20 @@
     <div id="container"></div>
     <div class="control-panel">
         <div class="control-entry">
-            <label>a选择工作地点：</label>
+            <label>a选择地点：</label>
             <div class="control-input">
                 <input id="work-location" type="text">
             </div>
         </div>
         <div class="control-entry">
-            <label>b选择通勤方式：</label>
+            <label>b选择到达方式：</label>
             <div class="control-input">
                 <input type="radio" name="vehicle" value="SUBWAY,BUS" onClick="takeBus(this)" checked/> 公交+地铁
                 <input type="radio" name="vehicle" value="SUBWAY" onClick="takeSubway(this)" /> 地铁
             </div>
         </div>
         <div class="control-entry">
-            <label>c导入房源文件：</label>
+            <label>c导入酒店文件：</label>
             <div class="control-input">
                 <input type="file" name="file" onChange="importRentInfo(this)" />
             </div>
@@ -178,7 +178,7 @@
                 rentMarkerArray.push(rentMarker);
                 
 // 注意其中这一句会被显示在信息窗体上。链接指向58品牌公寓馆的搜索页面，搜索的地址就是点标记（房源）的地址
-                rentMarker.content = "<div>房源：<a target = '_blank' href='http://bj.58.com/pinpaigongyu/?key=" + address + "'>" + address + "</a><div>"
+                rentMarker.content = "<div>房源：<a target = '_blank' href='https://www.baidu.com/s?wd=" + address + "'>" + address + "</a><div>"
                 rentMarker.on('click', function(e) { //在房源标记被点击时打开
                     infoWindow.setContent(e.target.content);//鼠标移到标记上会显示标记content属性的内容
                     infoWindow.open(map, e.target.getPosition());//在标记的位置打开窗体

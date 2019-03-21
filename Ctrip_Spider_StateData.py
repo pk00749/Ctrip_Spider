@@ -22,12 +22,12 @@ def create_table():
         cur.execute("create table if not exists htl_state_data (no int unsigned not null auto_increment,city varchar(50),\
         id mediumint unsigned not null,date timestamp,name varchar(50),address varchar(200),district varchar(50),\
         primary key(no,id))engine=InnoDB default charset='utf8'")
-    except MySQLdb.Warning, w:
-        print "Warning: %s" % str(w)
-    except MySQLdb.Error, e:
-        print "Error %d:%s" % (e.args[0], e.args[1])
-    except MySQLdb.IntegrityError, interror:
-        print "Integrity Error %d:%s" % (interror.args[0], interror.args[1])
+    except MySQLdb.Warning:
+        print("Warning: %s" % str(w))
+    except MySQLdb.Error:
+        print("Error %d:%s" % (e.args[0], e.args[1]))
+    except MySQLdb.IntegrityError:
+        print("Integrity Error %d:%s" % (interror.args[0], interror.args[1]))
 
 
 def spider_state_data(detail_page):
@@ -57,7 +57,7 @@ def spider_state_data(detail_page):
 
     conn.commit()
 
-    print "Received"
+    print("Received")
 
 
 def city_list(city, province):
@@ -89,4 +89,4 @@ if __name__ == '__main__':
     conn.commit()
     conn.close()
 
-    print 'State Data Done'
+    print('State Data Done')

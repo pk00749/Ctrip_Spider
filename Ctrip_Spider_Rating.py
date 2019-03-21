@@ -18,10 +18,10 @@ def create_table():
         cur.execute("create table htl_rating(no int unsigned not null auto_increment,id mediumint unsigned not null,\
     date timestamp,rating float,primary key(no))")
         pass
-    except MySQLdb.Warning, w:
-        print "Warning:%s" % str(w)
-    except MySQLdb.Error, e:
-        print "Error %d:%s" % (e.args[0], e.args[1])
+    except MySQLdb.Warning:
+        print("Warning:%s" % str(w))
+    except MySQLdb.Error:
+        print("Error %d:%s" % (e.args[0], e.args[1]))
 
 
 def spider_rating(detail_page):
@@ -55,4 +55,4 @@ if __name__ == '__main__':
     conn.commit()
     conn.close()
 
-    print 'Value Done'
+    print('Value Done')

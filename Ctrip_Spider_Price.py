@@ -19,10 +19,10 @@ def create_table():
         cur.execute("create table if not exists htl_price(no int unsigned not null auto_increment,id mediumint unsigned not null,\
     date timestamp,price float,primary key(no))")
         pass
-    except MySQLdb.Warning, w:
-        print "Warning:%s" % str(w)
-    except MySQLdb.Error, e:
-        print "Error %d:%s" % (e.args[0], e.args[1])
+    except MySQLdb.Warning:
+        print("Warning:%s" % str(w))
+    except MySQLdb.Error:
+        print("Error %d:%s" % (e.args[0], e.args[1]))
 
 
 def spider_price(detail_page):
