@@ -27,15 +27,15 @@ def load_url(page_url, page_number):
     request = urllib2.Request(url, headers=headers)
     response = urllib2.urlopen(request)
     page_soup = BeautifulSoup(response.read())
-    print 'Downloading page %d, url: ' % page_number + url
+    print('Downloading page %d, url: ' % page_number + url)
     return page_soup
 
 
 def get_amount_pages(page_soup):
     amount = page_soup.find(id="lblAmount").string
-    print 'Total number of hotel: '+amount
+    print('Total number of hotel: '+amount)
 
     pages = page_soup.find("div", attrs={"class": "c_page_list layoutfix"}).find(rel="nofollow").string
-    print 'Total number of page: '+pages
+    print('Total number of page: '+pages)
     pages = int(pages)
     return pages

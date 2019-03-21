@@ -59,4 +59,4 @@ if __name__ == '__main__':
     conn.commit()
     conn.close()
 
-    print 'Judge Done'
+    print('Judge Done')

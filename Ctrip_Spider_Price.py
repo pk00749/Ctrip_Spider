@@ -50,4 +50,4 @@ if __name__ == '__main__':
     conn.commit()
     conn.close()
 
-    print 'Price Done'
+    print('Price Done')

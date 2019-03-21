@@ -46,7 +46,7 @@ def load_url(page_url, page_number):
     request = urllib2.Request(url, headers=headers)
     response = urllib2.urlopen(request)
     page_soup = BeautifulSoup(response.read())
-    print 'Downloading page %d, url: ' % page_number + url
+    print('Downloading page %d, url: ' % page_number + url)
     return page_soup
 
 
@@ -60,7 +60,7 @@ def spider(detail_page, result):
     pre_workbook = xlrd.open_workbook(result)
     cur_workbook = copy(pre_workbook)
     cur_worksheet = cur_workbook.get_sheet(0)
-    print hotels
+    print(hotels)
     for htl in range(0, hotels):
         if hotel_detail[htl]["id"] != "hoteltuan":
             ID = float(hotel_detail[htl]['id'])
@@ -102,10 +102,10 @@ def spider(detail_page, result):
 
 def get_amount_pages(page_soup):
     amount = page_soup.find(id="lblAmount").string
-    print 'Total number of hotel: '+amount
+    print('Total number of hotel: '+amount)
 
     pages = soup.find("div", attrs={"class": "c_page_list layoutfix"}).find(rel="nofollow").string
-    print 'Total number of page: '+pages
+    print('Total number of page: '+pages)
     pages = int(pages)
     return pages
 
@@ -131,7 +131,7 @@ if __name__ == '__main__':
     conn.commit()
     conn.close()
 
-print 'Done'
+print('Done')
 
 
 # workbook = xlsxwriter.Workbook('demo_1.xls')

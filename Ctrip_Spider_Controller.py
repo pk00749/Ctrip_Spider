@@ -48,7 +48,7 @@ def city_top_10(min_price, max_price, min_rating, min_judge):
             for htl in htls:
                 cur.execute("select htl_state_data.name from htl_state_data where htl_state_data.id = %s", (htl[0],))
                 name = cur.fetchall()
-                print name[0][0]+','+','.join(str(htl[i]) for i in xrange(5))
+                print(name[0][0]+','+','.join(str(htl[i]) for i in xrange(5)))
                 writer.writerow([name[0][0], name[0][0], htl[2], "http://www.baidu.com"])
     top_10.close()
 
@@ -73,7 +73,7 @@ def district_top_10(min_price, max_price, min_rating, min_judge):
             for htl in htls:
                 cur.execute("select htl_state_data.name from htl_state_data where htl_state_data.id = %s", (htl[0],))
                 name = cur.fetchall()
-                print name[0][0]+','+','.join(str(htl[i]) for i in xrange(5))
+                print(name[0][0]+','+','.join(str(htl[i]) for i in xrange(5)))
 
 
 def district_details(district):
@@ -170,5 +170,5 @@ if __name__ == '__main__':
     # approximate_num(324)
     # print classify(4.2, 0.5)
 
-    print 'Done'
+    print('Done')
 
